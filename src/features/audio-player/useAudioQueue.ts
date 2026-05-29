@@ -11,7 +11,6 @@ const playNext = () => {
   }
 
   isPlaying = true;
-
   const soundKey = queue.shift()!;
   const sound = soundMap[soundKey];
 
@@ -25,9 +24,7 @@ const playNext = () => {
   }
   sound.play();
 
-  sound.once("end", () => {
-    playNext();
-  });
+  sound.once("end", playNext);
 };
 
 export const pushSound = (sounds: string[]) => {

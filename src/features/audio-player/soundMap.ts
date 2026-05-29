@@ -60,6 +60,7 @@ export const soundMap: Record<string, Howl> = Object.fromEntries(
     new Howl({
       src: [`/sounds/${key}.mp3`],
       format: ["mp3"],
+      preload: true,
     }),
   ]),
 );

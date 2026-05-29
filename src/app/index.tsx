@@ -8,6 +8,7 @@ import { useCallback } from "react";
 export const App = () => {
   const handleKey = useCallback((key: string) => {
     const sounds = convertToSound(key);
+    console.log("key:", key, "sounds:", sounds);
     pushSound(sounds);
   }, []);
 

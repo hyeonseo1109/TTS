@@ -1,5 +1,7 @@
+pub mod key_map;
+
 use rdev::{listen, Event, EventType};
-use tauri::AppHandle;
+use tauri::{AppHandle, Emitter};
 
 use crate::keyboard::key_map::key_to_string;
 

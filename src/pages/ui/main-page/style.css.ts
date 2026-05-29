@@ -16,6 +16,7 @@ export const mainContainer = style({
   height: "80%",
   border: "1px solid black",
   position: "relative",
+  backdropFilter: "blur(10px) saturate(180%)",
 });
 
 export const textContainer = style({

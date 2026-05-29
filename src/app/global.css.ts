@@ -21,7 +21,6 @@ globalStyle("body", {
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
   backgroundColor: "transparent",
-  backdropFilter: "blur(10px) saturate(180%)",
   color: "black",
   lineHeight: 1.5,
   // 배경 이미지 설정 시

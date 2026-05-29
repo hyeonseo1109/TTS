@@ -14,5 +14,5 @@ export const useGlobalKey = (onKey: (key: string) => void) => {
     return () => {
       unlisten?.();
     };
-  }, [onKey]);
+  }, []);
 };

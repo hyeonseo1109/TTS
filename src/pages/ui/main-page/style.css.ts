@@ -16,6 +16,7 @@ export const mainContainer = style({
   height: "80%",
   border: "1px solid black",
   position: "relative",
+  backgroundColor: "rgba(255, 255, 255, 0.15)",
   backdropFilter: "blur(10px) saturate(180%)",
 });
 

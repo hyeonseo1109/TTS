@@ -17,13 +17,28 @@ export const INITIAL_MAP: Record<string, string> = {
 
 export const VOWEL_MAP: Record<string, string> = {
   ㅏ: "아",
+  ㅑ: "야",
   ㅓ: "어",
+  ㅕ: "여",
   ㅗ: "오",
+  ㅛ: "요",
   ㅜ: "우",
+  ㅠ: "유",
   ㅡ: "으",
   ㅣ: "이",
-  ㅕ: "여",
-  ㅑ: "야",
+
+  ㅐ: "애",
+  ㅒ: "얘",
+  ㅔ: "에",
+  ㅖ: "예",
+
+  ㅘ: "와",
+  ㅙ: "왜",
+  ㅚ: "외",
+  ㅝ: "워",
+  ㅞ: "웨",
+  ㅟ: "위",
+  ㅢ: "의",
 };
 
 export const FINAL_MAP: Record<string, string> = {
@@ -34,4 +49,19 @@ export const FINAL_MAP: Record<string, string> = {
   ㅁ: "음",
   ㅂ: "읍",
   ㅇ: "응",
+
+  ㄲ: "윽",
+  ㅆ: "읏",
+  ㅄ: "읍",
+
+  ㄳ: "윽스",
+  ㄵ: "은즈",
+  ㄶ: "은흐",
+  ㄺ: "을그",
+  ㄻ: "을므",
+  ㄼ: "을브",
+  ㄽ: "을스",
+  ㄾ: "을트",
+  ㄿ: "을프",
+  ㅀ: "을흐",
 };

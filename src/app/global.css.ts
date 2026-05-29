@@ -20,7 +20,8 @@ globalStyle("body", {
   fontFamily: `system-ui, -apple-system, Segoe UI, Roboto, sans-serif`,
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
-  backgroundColor: "white",
+  backgroundColor: "transparent",
+  backdropFilter: "blur(10px) saturate(180%)",
   color: "black",
   lineHeight: 1.5,
   // 배경 이미지 설정 시
@@ -33,6 +34,8 @@ globalStyle("#root", {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  width: "100%",
+  height: "100%",
 });
 
 /* =========================

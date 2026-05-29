@@ -58,8 +58,8 @@ export const soundMap: Record<string, Howl> = Object.fromEntries(
   soundFiles.map((key) => [
     key,
     new Howl({
-      src: [`/sounds/${key}.m4a`],
-      format: ["m4a"],
+      src: [`/sounds/${key}.mp3`],
+      format: ["mp3"],
     }),
   ]),
 );

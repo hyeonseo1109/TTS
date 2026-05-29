@@ -1,3 +1,4 @@
+import { Howler } from "howler";
 import { soundMap } from "./soundMap";
 
 const queue: string[] = [];
@@ -14,13 +15,11 @@ const playNext = () => {
   const soundKey = queue.shift()!;
   const sound = soundMap[soundKey];
 
-  // 없으면 스킵
   if (!sound) {
     playNext();
     return;
   }
 
-  // 이미 재생 중이면 멈추고 다시 재생
   if (sound.playing()) {
     sound.stop();
   }
@@ -33,6 +32,11 @@ const playNext = () => {
 
 export const pushSound = (sounds: string[]) => {
   if (!sounds || sounds.length === 0) return;
+
+  const ctx = Howler.ctx as AudioContext | undefined;
+  if (ctx?.state === "suspended") {
+    ctx.resume();
+  }
 
   queue.push(...sounds);
 

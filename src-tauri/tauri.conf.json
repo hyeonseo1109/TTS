@@ -16,10 +16,7 @@
         "title": "tts",
         "width": 800,
         "height": 600,
-        "transparent": true,
-        "decorations": true,
-        "titleBarStyle": "Overlay",
-        "hiddenTitle": true,
+        "transparent": false,
         "alwaysOnTop": true,
         "resizable": true
       }

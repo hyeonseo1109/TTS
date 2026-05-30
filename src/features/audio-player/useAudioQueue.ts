@@ -1,6 +1,6 @@
 import { soundMap } from "./soundMap";
 
-const DELAY_MS = 80; // 이 값 조절해보세요 (50~150)
+const DELAY_MS = 30;
 
 export const pushSound = (sounds: string[]) => {
   if (!sounds || sounds.length === 0) return;

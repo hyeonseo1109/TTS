@@ -48,25 +48,36 @@ export const useGlobalKey = (onKey: (key: string) => void) => {
       const key = e.key;
 
       if (VOWEL_MAP[key]) {
-        // 모음: 대기 중 자음은 무조건 초성
         flush(true);
         onKey(key);
       } else if (CONSONANTS.has(key)) {
-        // 자음: 대기 중 자음은 받침으로 확정
         flush(false);
         pendingConsonant.current = key;
-        // 타임아웃: 다음 키 없으면 받침으로
-        pendingTimer.current = setTimeout(() => {
-          flush(false);
-        }, 80);
+        pendingTimer.current = setTimeout(() => flush(false), 80);
       } else {
-        // 영문 등: 대기 중 자음은 받침
         flush(false);
         onKey(key);
       }
     };
 
+    // Tauri 백그라운드 이벤트 (키 종류는 모름, 카운트만)
+    let unlisten: (() => void) | null = null;
+    const isTauri = "__TAURI_INTERNALS__" in window;
+    if (isTauri) {
+      import("@tauri-apps/api/event").then(({ listen }) => {
+        listen("global-keydown", () => {
+          // 백그라운드에서는 어떤 키인지 모르므로 카운트만
+          // 필요시 여기서 별도 처리
+        }).then((fn) => {
+          unlisten = fn;
+        });
+      });
+    }
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      unlisten?.();
+    };
   }, [onKey]);
 };
